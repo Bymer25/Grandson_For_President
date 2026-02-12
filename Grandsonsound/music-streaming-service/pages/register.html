@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Вход</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">GrandsonSound</a>
+            <a href="../index.html" class="btn btn-outline">На главную</a>
+        </div>
+    </nav>
+    <div class="auth-form">
+        <h2 style="margin-bottom: 30px;">Вход</h2>
+        <form id="loginForm">
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Пароль" required>
+            <button type="submit" class="btn btn-primary" style="width:100%;">Войти</button>
+        </form>
+        <p style="margin-top: 20px;">Нет аккаунта? <a href="register.html">Регистрация</a></p>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', e => {
+            e.preventDefault();
+            alert('Вход выполнен (демо)');
+            window.location.href = '../index.html';
+        });
+    </script>
+    <script src="../navigation.js"></script>
+</body>
+</html>

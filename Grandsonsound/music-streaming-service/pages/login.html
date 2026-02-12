@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход — GrandsonSound</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Навигация (без активных ссылок, просто для перехода назад) -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo"><i class="fas fa-headphones"></i> GrandsonSound</a>
+            <a href="../index.html" class="btn btn-outline">На главную</a>
+        </div>
+    </nav>
+
+    <!-- Форма входа -->
+    <div class="auth-form">
+        <h2 style="margin-bottom: 30px; text-align: center;">Вход в аккаунт</h2>
+        <form id="loginForm">
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Пароль" required>
+            <button type="submit" class="btn btn-primary" style="width:100%;">Войти</button>
+        </form>
+        <p style="margin-top: 20px; text-align: center;">
+            Нет аккаунта? <a href="register.html">Зарегистрироваться</a>
+        </p>
+    </div>
+
+    <!-- Скрипты (пути корректные, из папки pages) -->
+    <script src="../navigation.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

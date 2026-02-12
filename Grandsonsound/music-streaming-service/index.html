@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrandsonSound — Chiraq Drill</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><i class="fas fa-headphones"></i> GrandsonSound</a>
+            <div class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="pages/catalog.html">Каталог</a>
+                <a href="pages/pricing.html">Тарифы</a>
+            </div>
+            <div class="nav-buttons">
+                <a href="pages/login.html" class="btn btn-login">Войти</a>
+                <a href="pages/register.html" class="btn btn-primary">Регистрация</a>
+            </div>
+            <button class="mobile-menu-btn" style="display: none; background: none; border: none; color: white; font-size: 24px;">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero container">
+        <div>
+            <h1>Вся музыка <span class="gradient-text">Chiraq Drill</span> в одном месте</h1>
+            <p style="color: var(--gray); font-size: 20px; margin: 20px 0;">King Von, Chief Keef, Lil Durk, NLE Choppa. Эксклюзивы, совместные сессии, Hi-Fi.</p>
+            <a href="pages/register.html" class="btn btn-primary" style="padding: 14px 32px;">30 дней бесплатно</a>
+        </div>
+        <div class="card" data-href="pages/player.html?track=crazy-story">
+            <div style="display: flex; gap: 16px; align-items: center;">
+                <div class="cover" style="background: #E53E3E;">KV</div>
+                <div>
+                    <h3>Crazy Story</h3>
+                    <p style="color: var(--gray);">King Von</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" style="margin: 60px auto;">
+        <h2 style="font-size: 32px; margin-bottom: 40px;">Топ треки недели</h2>
+        <div class="grid-3">
+            <div class="card" data-href="pages/player.html?track=crazy-story">
+                <div style="display: flex; gap: 16px;">
+                    <div class="cover" style="background: #E53E3E;">KV</div>
+                    <div>
+                        <h3>Crazy Story</h3>
+                        <p style="color: var(--gray);">King Von</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-href="pages/player.html?track=shotta-flow">
+                <div style="display: flex; gap: 16px;">
+                    <div class="cover" style="background: #2563EB;">NC</div>
+                    <div>
+                        <h3>Shotta Flow</h3>
+                        <p style="color: var(--gray);">NLE Choppa</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-href="pages/player.html?track=love-sosa">
+                <div style="display: flex; gap: 16px;">
+                    <div class="cover" style="background: #F59E0B;">CS</div>
+                    <div>
+                        <h3>Love Sosa</h3>
+                        <p style="color: var(--gray);">Chief Keef</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-href="pages/player.html?track=all-my-life">
+                <div style="display: flex; gap: 16px;">
+                    <div class="cover" style="background: #10B981;">LD</div>
+                    <div>
+                        <h3>All My Life</h3>
+                        <p style="color: var(--gray);">Lil Durk</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<script src="navigation.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

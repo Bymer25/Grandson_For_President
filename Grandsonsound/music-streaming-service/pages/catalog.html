@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог — GrandsonSound</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo"><i class="fas fa-headphones"></i> GrandsonSound</a>
+            <div class="nav-links">
+                <a href="../index.html">Главная</a>
+                <a href="catalog.html" class="active">Каталог</a>
+                <a href="pricing.html">Тарифы</a>
+            </div>
+            <div class="nav-buttons">
+                <a href="login.html" class="btn btn-login">Войти</a>
+                <a href="register.html" class="btn btn-primary">Регистрация</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container" style="margin-top: 100px;">
+        <h1 style="font-size: 48px;">Chiraq Drill</h1>
+        <p style="color: var(--gray); margin-bottom: 40px;">Все треки King Von, Chief Keef, Lil Durk, NLE Choppa</p>
+        
+        <div class="grid-3">
+            <!-- King Von -->
+            <div class="card" onclick="window.location='player.html?track=crazy-story'">
+                <div style="display: flex; gap: 16px;">
+                    <div class="cover" style="background: #E53E3E;">KV</div>
+                    <div>
+                        <h3>Crazy Story</h3>
+                        <p style="color: var(--gray);">King Von</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card" onclick="window.location='player.html?track=took-her-to-the-o'">
+                <div style="display: flex; gap: 16px;">
+                    <div class="cover" style="background: #E53E3E;">KV</div>
+                    <div>
+                        <h3>Took Her To The O</h3>
+                        <p style="color: var(--gray);">King Von</p>
+                    </div>
+                </div>
+            </div>
+            <!-- NLE Choppa -->
+            <div class="card" onclick="window.location='player.html?track=shotta-flow'">
+                <div style="display: flex; gap: 16px;">
+                    <div class="cover" style="background: #2563EB;">NC</div>
+                    <div>
+                        <h3>Shotta Flow</h3>
+                        <p style="color: var(--gray);">NLE Choppa</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card" onclick="window.location='player.html?track=camelot'">
+                <div style="display: flex; gap: 16px;">
+                    <div class="cover" style="background: #2563EB;">NC</div>
+                    <div>
+                        <h3>Camelot</h3>
+                        <p style="color: var(--gray);">NLE Choppa</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Chief Keef -->
+            <div class="card" onclick="window.location='player.html?track=love-sosa'">
+                <div style="display: flex; gap: 16px;">
+                    <div class="cover" style="background: #F59E0B;">CS</div>
+                    <div>
+                        <h3>Love Sosa</h3>
+                        <p style="color: var(--gray);">Chief Keef</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card" onclick="window.location='player.html?track=faneto'">
+                <div style="display: flex; gap: 16px;">
+                    <div class="cover" style="background: #F59E0B;">CS</div>
+                    <div>
+                        <h3>Faneto</h3>
+                        <p style="color: var(--gray);">Chief Keef</p>
+                    </div>
+                </div>
+</div>
+            <!-- Lil Durk -->
+            <div class="card" onclick="window.location='player.html?track=all-my-life'">
+                <div style="display: flex; gap: 16px;">
+                    <div class="cover" style="background: #10B981;">LD</div>
+                    <div>
+                        <h3>All My Life</h3>
+                        <p style="color: var(--gray);">Lil Durk</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card" onclick="window.location='player.html?track=viral-moment'">
+                <div style="display: flex; gap: 16px;">
+                    <div class="cover" style="background: #10B981;">LD</div>
+                    <div>
+                        <h3>Viral Moment</h3>
+                        <p style="color: var(--gray);">Lil Durk</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../navigation.js"></script>
+</body>
+</html>

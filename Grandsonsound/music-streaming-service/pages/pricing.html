@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тарифы — GrandsonSound</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Навигация (ведёт на правильные страницы) -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo"><i class="fas fa-headphones"></i> GrandsonSound</a>
+            <div class="nav-links">
+                <a href="../index.html">Главная</a>
+                <a href="catalog.html">Каталог</a>
+                <a href="pricing.html" class="active">Тарифы</a>
+            </div>
+            <div class="nav-buttons">
+                <a href="login.html" class="btn btn-login">Войти</a>
+                <a href="register.html" class="btn btn-primary">Регистрация</a>
+            </div>
+        </div>
+    </nav>
+
+    <section style="padding: 100px 0;">
+        <div class="container">
+            <h1 style="font-size: 48px; text-align: center; margin-bottom: 20px;">
+                Прозрачные <span class="gradient-text">тарифы</span>
+            </h1>
+            <p style="text-align: center; color: var(--gray); margin-bottom: 50px;">
+                30 дней бесплатно на любой подписке
+            </p>
+
+            <!-- Карточки тарифов -->
+            <div class="grid-3">
+                <!-- Студенческий -->
+                <div class="card" style="position: relative;">
+                    <span style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 4px 16px; border-radius: 20px; font-size: 12px;">-50%</span>
+                    <h3 style="font-size: 28px; margin-bottom: 10px;">Студенческий</h3>
+                    <div style="font-size: 42px; font-weight: 800; color: var(--primary);">149₽</div>
+                    <p style="color: var(--gray); margin-bottom: 20px;">/месяц</p>
+                    <ul style="list-style: none; margin-bottom: 30px;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> 320 kbps</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> 1 устройство</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> Без рекламы</li>
+                    </ul>
+                    <a href="register.html" class="btn btn-outline" style="width: 100%;">Выбрать</a>
+                </div>
+                <!-- Базовый -->
+                <div class="card">
+                    <h3 style="font-size: 28px; margin-bottom: 10px;">Базовый</h3>
+                    <div style="font-size: 42px; font-weight: 800; color: var(--primary);">199₽</div>
+                    <p style="color: var(--gray); margin-bottom: 20px;">/месяц</p>
+                    <ul style="list-style: none; margin-bottom: 30px;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> 320 kbps</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> 1 устройство</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> Без рекламы</li>
+                    </ul>
+                    <a href="register.html" class="btn btn-outline" style="width: 100%;">Выбрать</a>
+</div>
+                <!-- Премиум (популярный) -->
+                <div class="card" style="border: 2px solid var(--primary);">
+                    <span style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 4px 16px; border-radius: 20px; font-size: 12px;">🔥 Популярное</span>
+                    <h3 style="font-size: 28px; margin-bottom: 10px;">Премиум</h3>
+                    <div style="font-size: 42px; font-weight: 800; color: var(--primary);">299₽</div>
+                    <p style="color: var(--gray); margin-bottom: 20px;">/месяц</p>
+                    <ul style="list-style: none; margin-bottom: 30px;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> Lossless / Hi-Fi</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> 3 устройства</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> Офлайн-режим</li>
+                    </ul>
+                    <a href="register.html" class="btn btn-primary" style="width: 100%;">Выбрать</a>
+                </div>
+                <!-- Семейный -->
+                <div class="card">
+                    <h3 style="font-size: 28px; margin-bottom: 10px;">Семейный</h3>
+                    <div style="font-size: 42px; font-weight: 800; color: var(--primary);">499₽</div>
+                    <p style="color: var(--gray); margin-bottom: 20px;">/месяц</p>
+                    <ul style="list-style: none; margin-bottom: 30px;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> До 6 аккаунтов</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> Lossless для всех</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> Родительский контроль</li>
+                    </ul>
+                    <a href="register.html" class="btn btn-outline" style="width: 100%;">Выбрать</a>
+                </div>
+            </div>
+
+            <!-- Блок платёжных методов (коротко) -->
+            <div style="margin-top: 60px; text-align: center;">
+                <h3 style="margin-bottom: 20px;">Принимаем к оплате</h3>
+                <div style="display: flex; gap: 20px; justify-content: center; font-size: 32px; color: var(--gray);">
+                    <i class="fas fa-credit-card"></i>
+                    <i class="fas fa-qrcode"></i>
+                    <i class="fas fa-building"></i>
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <p style="color: var(--gray); margin-top: 20px;">СБП, карты МИР/Visa/Mastercard, T-Pay, SberPay</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="../navigation.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>
