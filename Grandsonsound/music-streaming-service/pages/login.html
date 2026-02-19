@@ -1,15 +1,60 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вход — GrandsonSound</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* Дополнительные стили для прижатого футера */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .navbar {
+            flex-shrink: 0;
+        }
+        
+        .auth-form {
+            flex: 1 0 auto; /* Растягивается на всё доступное пространство */
+            margin: 60px auto; /* Ваш оригинальный margin */
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+            background: var(--card);
+            border-radius: 16px;
+            box-sizing: border-box;
+        }
+        
+        .footer {
+            flex-shrink: 0;
+            margin-top: auto; /* Прижимает футер к низу */
+            width: 100%;
+        }
+        
+        /* Убираем лишний margin-top из оригинального .footer */
+        .footer {
+            margin-top: auto; /* Переопределяем ваш margin-top: 80px */
+        }
+        
+        /* Адаптивность для мобильных */
+        @media (max-width: 768px) {
+            .auth-form {
+                margin: 20px auto;
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Навигация (без активных ссылок, просто для перехода назад) -->
     <nav class="navbar">
         <div class="container">
             <a href="../index.html" class="logo"><i class="fas fa-headphones"></i> GrandsonSound</a>
@@ -17,7 +62,6 @@
         </div>
     </nav>
 
-    <!-- Форма входа -->
     <div class="auth-form">
         <h2 style="margin-bottom: 30px; text-align: center;">Вход в аккаунт</h2>
         <form id="loginForm">
@@ -30,7 +74,20 @@
         </p>
     </div>
 
-    <!-- Скрипты (пути корректные, из папки pages) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="logo" style="font-size: 20px;">GrandsonSound</div>
+            <div class="footer-links">
+                <a href="#">О нас</a>
+                <a href="#">Правила</a>
+                <a href="#">Конфиденциальность</a>
+                <a href="#"><i class="fab fa-vk"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+            </div>
+            <div style="color: var(--gray); font-size: 14px;">© 2026 GrandsonSound</div>
+        </div>
+    </footer>
+
     <script src="../navigation.js"></script>
     <script src="../script.js"></script>
 </body>
