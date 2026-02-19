@@ -91,6 +91,11 @@ body {
     border-radius: 16px;
     padding: 24px;
     border: 1px solid var(--border);
+    cursor: pointer;
+    transition: 0.2s;
+}
+.card:hover {
+    border-color: var(--primary);
 }
 .grid-3 {
     display: grid;
@@ -99,50 +104,30 @@ body {
 }
 
 /* Плеер */
-.player-fixed {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--darker);
-    padding: 12px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 1px solid var(--border);
+audio {
+    width: 100%;
+    margin-top: 20px;
 }
-.track-info { display: flex; align-items: center; gap: 12px; }
-.cover {
-    width: 48px;
-    height: 48px;
-    background: var(--primary);
+#playlist {
+    list-style: none;
+    margin-top: 20px;
+}
+#playlist li {
+    padding: 10px;
+    background: var(--card);
+    margin-bottom: 5px;
     border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+#playlist li:hover {
+    background: var(--primary);
+    color: white;
+}
+#playlist li.playing {
+    background: var(--primary);
     color: white;
     font-weight: bold;
-}
-.controls { display: flex; gap: 16px; }
-.controls button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-}
-.progress {
-    width: 300px;
-    height: 4px;
-    background: var(--border);
-    border-radius: 2px;
-    position: relative;
-}
-.progress-fill {
-    height: 100%;
-    background: var(--primary);
-    width: 30%;
-    border-radius: 2px;
 }
 
 /* Формы */
@@ -163,8 +148,89 @@ body {
     color: white;
 }
 
-/* Мобилки */
+/* Футер */
+.footer {
+    background: var(--darker);
+    padding: 40px 0 20px;
+    margin-top: 80px;
+    border-top: 1px solid var(--border);
+}
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.footer-links a {
+    color: var(--gray);
+    margin-left: 20px;
+    text-decoration: none;
+}
+.footer-links a:hover {
+    color: var(--primary);
+}
+
+/* Адаптивность */
 @media (max-width: 768px) {
     .nav-links { display: none; }
     .hero { grid-template-columns: 1fr; }
+    .footer .container { flex-direction: column; text-align: center; }
+    .footer-links a { margin: 0 10px; }
+}
+/* Таблица сравнения */
+.comparison-section {
+    margin: 80px 0;
+}
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background: var(--card);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.comparison-table th {
+    background: var(--primary);
+    color: white;
+    font-weight: 600;
+    padding: 16px;
+    text-align: left;
+}
+.comparison-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--light);
+}
+.comparison-table tr:last-child td {
+    border-bottom: none;
+}
+.comparison-table td:first-child {
+    font-weight: 600;
+    color: var(--gray);
+}
+.comparison-table .highlight {
+    background: rgba(124, 58, 237, 0.15);
+    font-weight: 600;
+}
+.comparison-table i.fa-check {
+    color: #10B981;
+    margin-right: 8px;
+}
+.comparison-table i.fa-times {
+    color: #EF4444;
+    margin-right: 8px;
+}
+.comparison-table .ours {
+    color: var(--primary);
+    font-weight: 700;
+}
+@media (max-width: 768px) {
+    .comparison-table-wrapper {
+        overflow-x: auto;
+    }
+    .comparison-table {
+        min-width: 600px;
+    }
 }
