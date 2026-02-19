@@ -5,6 +5,83 @@
     <title>Каталог — GrandsonSound</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Дополнительные стили для прижатого футера */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .navbar {
+            flex-shrink: 0;
+        }
+        
+        main {
+            flex: 1 0 auto;
+        }
+        
+        .footer {
+            flex-shrink: 0;
+            margin-top: auto;
+        }
+        
+        /* Стили для карточек с изображениями */
+        .card {
+            cursor: pointer;
+            transition: transform 0.2s, border-color 0.2s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+        }
+        
+        /* Стили для обложек */
+        .cover {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: white;
+            font-size: 20px;
+            flex-shrink: 0;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* Класс для изображений в карточках */
+        .cover-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        
+        /* Центрирование сетки */
+        .grid-3 {
+            justify-content: center;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            section.container {
+                margin-top: 60px !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -22,90 +99,171 @@
         </div>
     </nav>
 
-    <section class="container" style="margin-top: 100px;">
-        <h1 style="font-size: 48px;">Chiraq Drill</h1>
-        <p style="color: var(--gray); margin-bottom: 40px;">Все треки King Von, Chief Keef, Lil Durk, NLE Choppa</p>
-        
-        <div class="grid-3">
-            <!-- King Von -->
-            <div class="card" onclick="window.location='player.html?track=crazy-story'">
-                <div style="display: flex; gap: 16px;">
-                    <div class="cover" style="background: #E53E3E;">KV</div>
-                    <div>
-                        <h3>Crazy Story</h3>
-                        <p style="color: var(--gray);">King Von</p>
+    <main>
+        <section class="container" style="margin-top: 100px;">
+            <h1 style="font-size: 48px; text-align: center;">Chiraq Drill</h1>
+            <p style="color: var(--gray); margin-bottom: 40px; text-align: center;">Все треки King Von, Chief Keef, Lil Durk, NLE Choppa</p>
+            
+            <div class="grid-3">
+                <!-- King Von - Crazy Story -->
+                <div class="card" data-href="player.html?track=crazy-story">
+                    <div style="display: flex; gap: 16px; align-items: center;">
+                        <!-- ЗДЕСЬ ВСТАВЛЯЙТЕ КАРТИНКУ для Crazy Story -->
+                        <img src="../images/king-von-crazy-story.jpg" 
+                             alt="Crazy Story" 
+                             class="cover-img"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="cover" style="background: #E53E3E; display: none;">KV</div>
+                        <div>
+                            <h3>Crazy Story</h3>
+                            <p style="color: var(--gray);">King Von</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- King Von - Took Her To The O -->
+                <div class="card" data-href="player.html?track=took-her-to-the-o">
+                    <div style="display: flex; gap: 16px; align-items: center;">
+                        <!-- ЗДЕСЬ ВСТАВЛЯЙТЕ КАРТИНКУ для Took Her To The O -->
+                        <img src="../images/king-von-took-her.jpg" 
+                             alt="Took Her To The O" 
+                             class="cover-img"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="cover" style="background: #E53E3E; display: none;">KV</div>
+                        <div>
+                            <h3>Took Her To The O</h3>
+                            <p style="color: var(--gray);">King Von</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NLE Choppa - Shotta Flow -->
+                <div class="card" data-href="player.html?track=shotta-flow">
+                    <div style="display: flex; gap: 16px; align-items: center;">
+                        <!-- ЗДЕСЬ ВСТАВЛЯЙТЕ КАРТИНКУ для Shotta Flow -->
+                        <img src="../images/nle-choppa-shotta-flow.jpg" 
+                             alt="Shotta Flow" 
+                             class="cover-img"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="cover" style="background: #2563EB; display: none;">NC</div>
+                        <div>
+                            <h3>Shotta Flow</h3>
+                            <p style="color: var(--gray);">NLE Choppa</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NLE Choppa - Camelot -->
+                <div class="card" data-href="player.html?track=camelot">
+                    <div style="display: flex; gap: 16px; align-items: center;">
+                        <!-- ЗДЕСЬ ВСТАВЛЯЙТЕ КАРТИНКУ для Camelot -->
+                        <img src="../images/nle-choppa-camelot.jpg" 
+                             alt="Camelot" 
+                             class="cover-img"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="cover" style="background: #2563EB; display: none;">NC</div>
+                        <div>
+                            <h3>Camelot</h3>
+                            <p style="color: var(--gray);">NLE Choppa</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chief Keef - Love Sosa -->
+                <div class="card" data-href="player.html?track=love-sosa">
+                    <div style="display: flex; gap: 16px; align-items: center;">
+                        <!-- ЗДЕСЬ ВСТАВЛЯЙТЕ КАРТИНКУ для Love Sosa -->
+                        <img src="../images/chief-keef-love-sosa.jpg" 
+                             alt="Love Sosa" 
+                             class="cover-img"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="cover" style="background: #F59E0B; display: none;">CS</div>
+                        <div>
+                            <h3>Love Sosa</h3>
+                            <p style="color: var(--gray);">Chief Keef</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chief Keef - Faneto -->
+                <div class="card" data-href="player.html?track=faneto">
+                    <div style="display: flex; gap: 16px; align-items: center;">
+                        <!-- ЗДЕСЬ ВСТАВЛЯЙТЕ КАРТИНКУ для Faneto -->
+                        <img src="../images/chief-keef-faneto.jpg" 
+                             alt="Faneto" 
+                             class="cover-img"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="cover" style="background: #F59E0B; display: none;">CS</div>
+                        <div>
+                            <h3>Faneto</h3>
+                            <p style="color: var(--gray);">Chief Keef</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lil Durk - All My Life -->
+                <div class="card" data-href="player.html?track=all-my-life">
+                    <div style="display: flex; gap: 16px; align-items: center;">
+                        <!-- ЗДЕСЬ ВСТАВЛЯЙТЕ КАРТИНКУ для All My Life -->
+                        <img src="../images/lil-durk-all-my-life.jpg" 
+                             alt="All My Life" 
+                             class="cover-img"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="cover" style="background: #10B981; display: none;">LD</div>
+                        <div>
+                            <h3>All My Life</h3>
+                            <p style="color: var(--gray);">Lil Durk</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lil Durk - Viral Moment -->
+                <div class="card" data-href="player.html?track=viral-moment">
+                    <div style="display: flex; gap: 16px; align-items: center;">
+                        <!-- ЗДЕСЬ ВСТАВЛЯЙТЕ КАРТИНКУ для Viral Moment -->
+                        <img src="../images/lil-durk-viral-moment.jpg" 
+                             alt="Viral Moment" 
+                             class="cover-img"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="cover" style="background: #10B981; display: none;">LD</div>
+                        <div>
+                            <h3>Viral Moment</h3>
+                            <p style="color: var(--gray);">Lil Durk</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="card" onclick="window.location='player.html?track=took-her-to-the-o'">
-                <div style="display: flex; gap: 16px;">
-                    <div class="cover" style="background: #E53E3E;">KV</div>
-                    <div>
-                        <h3>Took Her To The O</h3>
-                        <p style="color: var(--gray);">King Von</p>
-                    </div>
-                </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="logo" style="font-size: 20px;">GrandsonSound</div>
+            <div class="footer-links">
+                <a href="#">О нас</a>
+                <a href="#">Правила</a>
+                <a href="#">Конфиденциальность</a>
+                <a href="#"><i class="fab fa-vk"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
             </div>
-            <!-- NLE Choppa -->
-            <div class="card" onclick="window.location='player.html?track=shotta-flow'">
-                <div style="display: flex; gap: 16px;">
-                    <div class="cover" style="background: #2563EB;">NC</div>
-                    <div>
-                        <h3>Shotta Flow</h3>
-                        <p style="color: var(--gray);">NLE Choppa</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card" onclick="window.location='player.html?track=camelot'">
-                <div style="display: flex; gap: 16px;">
-                    <div class="cover" style="background: #2563EB;">NC</div>
-                    <div>
-                        <h3>Camelot</h3>
-                        <p style="color: var(--gray);">NLE Choppa</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Chief Keef -->
-            <div class="card" onclick="window.location='player.html?track=love-sosa'">
-                <div style="display: flex; gap: 16px;">
-                    <div class="cover" style="background: #F59E0B;">CS</div>
-                    <div>
-                        <h3>Love Sosa</h3>
-                        <p style="color: var(--gray);">Chief Keef</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card" onclick="window.location='player.html?track=faneto'">
-                <div style="display: flex; gap: 16px;">
-                    <div class="cover" style="background: #F59E0B;">CS</div>
-                    <div>
-                        <h3>Faneto</h3>
-                        <p style="color: var(--gray);">Chief Keef</p>
-                    </div>
-                </div>
-</div>
-            <!-- Lil Durk -->
-            <div class="card" onclick="window.location='player.html?track=all-my-life'">
-                <div style="display: flex; gap: 16px;">
-                    <div class="cover" style="background: #10B981;">LD</div>
-                    <div>
-                        <h3>All My Life</h3>
-                        <p style="color: var(--gray);">Lil Durk</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card" onclick="window.location='player.html?track=viral-moment'">
-                <div style="display: flex; gap: 16px;">
-                    <div class="cover" style="background: #10B981;">LD</div>
-                    <div>
-                        <h3>Viral Moment</h3>
-                        <p style="color: var(--gray);">Lil Durk</p>
-                    </div>
-                </div>
-            </div>
+            <div style="color: var(--gray); font-size: 14px;">© 2026 GrandsonSound</div>
         </div>
-    </section>
+    </footer>
 
     <script src="../navigation.js"></script>
+    <script src="../script.js"></script>
+    
+    <script>
+        // Скрипт для обработки кликов по карточкам
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', function() {
+                const href = this.dataset.href;
+                if (href) {
+                    window.location.href = href;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
