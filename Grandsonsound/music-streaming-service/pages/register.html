@@ -2,32 +2,142 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Вход</title>
+    <title>Регистрация — GrandsonSound</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Дополнительные стили для прижатого футера */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .navbar {
+            flex-shrink: 0;
+        }
+        
+        .auth-form {
+            flex: 1 0 auto; /* Растягивается на всё доступное пространство */
+            margin: 60px auto; /* Ваш оригинальный margin */
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+            background: var(--card);
+            border-radius: 16px;
+            box-sizing: border-box;
+        }
+        
+        .footer {
+            flex-shrink: 0;
+            margin-top: auto; /* Прижимает футер к низу */
+            width: 100%;
+        }
+        
+        /* Убираем лишний margin-top из оригинального .footer */
+        .footer {
+            margin-top: auto; /* Переопределяем margin-top: 80px */
+        }
+        
+        /* Стили для сообщения о бесплатном периоде */
+        .trial-badge {
+            background: rgba(124, 58, 237, 0.15);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 30px;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(124, 58, 237, 0.3);
+        }
+        
+        /* Адаптивность для мобильных */
+        @media (max-width: 768px) {
+            .auth-form {
+                margin: 20px auto;
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
-            <a href="../index.html" class="logo">GrandsonSound</a>
+            <a href="../index.html" class="logo"><i class="fas fa-headphones"></i> GrandsonSound</a>
             <a href="../index.html" class="btn btn-outline">На главную</a>
         </div>
     </nav>
+
     <div class="auth-form">
-        <h2 style="margin-bottom: 30px;">Вход</h2>
-        <form id="loginForm">
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Пароль" required>
-            <button type="submit" class="btn btn-primary" style="width:100%;">Войти</button>
+        <div style="text-align: center;">
+            <span class="trial-badge"><i class="fas fa-gift" style="margin-right: 8px;"></i>30 дней бесплатно</span>
+        </div>
+        <h2 style="margin-bottom: 10px; text-align: center;">Создать аккаунт</h2>
+        <p style="color: var(--gray); text-align: center; margin-bottom: 30px; font-size: 14px;">
+            Затем — от 149₽/мес. Отмените в любой момент
+        </p>
+        
+        <form id="registerForm">
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; color: var(--gray); font-size: 14px;">Email</label>
+                <input type="email" placeholder="your@email.com" required>
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; color: var(--gray); font-size: 14px;">Имя пользователя</label>
+                <input type="text" placeholder="username" required>
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; color: var(--gray); font-size: 14px;">Пароль</label>
+                <input type="password" placeholder="••••••••" required>
+            </div>
+            
+            <div style="margin-bottom: 25px;">
+                <label style="display: block; margin-bottom: 8px; color: var(--gray); font-size: 14px;">Подтвердите пароль</label>
+                <input type="password" placeholder="••••••••" required>
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                    <input type="checkbox" style="width: auto; margin-bottom: 0;" required>
+                    <span style="color: var(--gray); font-size: 14px;">Я принимаю <a href="#" style="color: var(--primary);">условия использования</a> и <a href="#" style="color: var(--primary);">политику конфиденциальности</a></span>
+                </label>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width:100%;">Зарегистрироваться</button>
         </form>
-        <p style="margin-top: 20px;">Нет аккаунта? <a href="register.html">Регистрация</a></p>
+        
+        <div style="margin-top: 25px; text-align: center; position: relative;">
+            <div style="border-top: 1px solid var(--border); margin: 20px 0;"></div>
+            <p style="color: var(--gray);">
+                Уже есть аккаунт? <a href="login.html" style="color: var(--primary); font-weight: 600;">Войти</a>
+            </p>
+        </div>
     </div>
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', e => {
-            e.preventDefault();
-            alert('Вход выполнен (демо)');
-            window.location.href = '../index.html';
-        });
-    </script>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="logo" style="font-size: 20px;">GrandsonSound</div>
+            <div class="footer-links">
+                <a href="#">О нас</a>
+                <a href="#">Правила</a>
+                <a href="#">Конфиденциальность</a>
+                <a href="#"><i class="fab fa-vk"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+            </div>
+            <div style="color: var(--gray); font-size: 14px;">© 2026 GrandsonSound</div>
+        </div>
+    </footer>
+
     <script src="../navigation.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>
