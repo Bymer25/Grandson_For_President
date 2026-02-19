@@ -1,19 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GrandsonSound — Chiraq Drill</title>
+    <title>GrandsonSound — Музыка без границ</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* Центрирование таблицы и секции */
+        .comparison-section {
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 80px auto;
+        }
+        
+        .comparison-section h2 {
+            text-align: center;
+            width: 100%;
+        }
+        
+        .comparison-section > p {
+            text-align: center;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .comparison-table-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        
+        .comparison-table {
+            margin: 0 auto;
+            width: auto;
+            min-width: 800px;
+            max-width: 100%;
+        }
+        
+        /* Делаем таблицу более читаемой на мобильных */
+        @media (max-width: 900px) {
+            .comparison-table-wrapper {
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding: 0 20px;
+            }
+            
+            .comparison-table {
+                min-width: 700px;
+            }
+        }
+        
+        /* Центрируем карточки популярных треков */
+        .grid-3 {
+            justify-content: center;
+        }
+        
+        /* Центрируем герой секцию */
+        .hero {
+            align-items: center;
+        }
+        
+        .hero-content {
+            text-align: left;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                text-align: center;
+            }
+        }
+        
+        /* Стили для карточек треков */
+        .card {
+            cursor: pointer;
+            transition: transform 0.2s, border-color 0.2s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+        }
+        
+        .cover {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: white;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        
+        /* Прижатый футер */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .navbar {
+            flex-shrink: 0;
+        }
+        
+        main {
+            flex: 1 0 auto;
+        }
+        
+        .footer {
+            flex-shrink: 0;
+            margin-top: auto;
+        }
+    </style>
 </head>
 <body>
+    <!-- Навигация -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo"><i class="fas fa-headphones"></i> GrandsonSound</a>
             <div class="nav-links">
-                <a href="index.html">Главная</a>
+                <a href="index.html" class="active">Главная</a>
                 <a href="pages/catalog.html">Каталог</a>
                 <a href="pages/pricing.html">Тарифы</a>
             </div>
@@ -27,28 +151,22 @@
         </div>
     </nav>
 
-    <section class="hero container">
-        <div>
-            <h1>Вся музыка <span class="gradient-text">Chiraq Drill</span> в одном месте</h1>
-            <p style="color: var(--gray); font-size: 20px; margin: 20px 0;">King Von, Chief Keef, Lil Durk, NLE Choppa. Эксклюзивы, совместные сессии, Hi-Fi.</p>
-            <a href="pages/register.html" class="btn btn-primary" style="padding: 14px 32px;">30 дней бесплатно</a>
-        </div>
-        <div class="card" data-href="pages/player.html?track=crazy-story">
-            <div style="display: flex; gap: 16px; align-items: center;">
-                <div class="cover" style="background: #E53E3E;">KV</div>
-                <div>
-                    <h3>Crazy Story</h3>
-                    <p style="color: var(--gray);">King Von</p>
-                </div>
+    <main>
+        <!-- Герой с УТП -->
+        <section class="hero container">
+            <div class="hero-content">
+                <h1>
+                    Вся музыка <span class="gradient-text">Chiraq Drill</span><br>
+                    <span style="font-size: 0.6em;">и тысячи других треков</span>
+                </h1>
+                <p style="color: var(--gray); font-size: 20px; margin: 20px 0;">
+                    King Von, Chief Keef, Lil Durk, NLE Choppa. Эксклюзивы, совместные сессии, Hi-Fi.<br>
+                    <strong>30 дней бесплатно, потом от 149₽/мес</strong>
+                </p>
+                <a href="pages/register.html" class="btn btn-primary" style="padding: 14px 32px;">Попробовать бесплатно</a>
             </div>
-        </div>
-    </section>
-
-    <section class="container" style="margin: 60px auto;">
-        <h2 style="font-size: 32px; margin-bottom: 40px;">Топ треки недели</h2>
-        <div class="grid-3">
-            <div class="card" data-href="pages/player.html?track=crazy-story">
-                <div style="display: flex; gap: 16px;">
+            <div class="hero-card" data-href="pages/player.html?track=crazy-story" style="cursor: pointer;">
+                <div style="display: flex; gap: 16px; align-items: center;">
                     <div class="cover" style="background: #E53E3E;">KV</div>
                     <div>
                         <h3>Crazy Story</h3>
@@ -56,36 +174,136 @@
                     </div>
                 </div>
             </div>
-            <div class="card" data-href="pages/player.html?track=shotta-flow">
-                <div style="display: flex; gap: 16px;">
-                    <div class="cover" style="background: #2563EB;">NC</div>
-                    <div>
-                        <h3>Shotta Flow</h3>
-                        <p style="color: var(--gray);">NLE Choppa</p>
+        </section>
+
+        <!-- Блок популярных треков -->
+        <section class="container" style="margin: 60px auto;">
+            <h2 style="font-size: 32px; margin-bottom: 40px; text-align: center;">Популярное</h2>
+            <div class="grid-3">
+                <div class="card" data-href="pages/player.html?track=crazy-story">
+                    <div style="display: flex; gap: 16px;">
+                        <div class="cover" style="background: #E53E3E;">KV</div>
+                        <div>
+                            <h3>Crazy Story</h3>
+                            <p style="color: var(--gray);">King Von</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" data-href="pages/player.html?track=shotta-flow">
+                    <div style="display: flex; gap: 16px;">
+                        <div class="cover" style="background: #2563EB;">NC</div>
+                        <div>
+                            <h3>Shotta Flow</h3>
+                            <p style="color: var(--gray);">NLE Choppa</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" data-href="pages/player.html?track=love-sosa">
+                    <div style="display: flex; gap: 16px;">
+                        <div class="cover" style="background: #F59E0B;">CS</div>
+                        <div>
+                            <h3>Love Sosa</h3>
+                            <p style="color: var(--gray);">Chief Keef</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" data-href="pages/player.html?track=all-my-life">
+                    <div style="display: flex; gap: 16px;">
+                        <div class="cover" style="background: #10B981;">LD</div>
+                        <div>
+                            <h3>All My Life</h3>
+                            <p style="color: var(--gray);">Lil Durk</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="card" data-href="pages/player.html?track=love-sosa">
-                <div style="display: flex; gap: 16px;">
-                    <div class="cover" style="background: #F59E0B;">CS</div>
-                    <div>
-                        <h3>Love Sosa</h3>
-                        <p style="color: var(--gray);">Chief Keef</p>
-                    </div>
-                </div>
+        </section>
+
+        <!-- Секция сравнения с конкурентами -->
+        <section class="container comparison-section">
+            <h2 style="font-size: 32px; margin-bottom: 20px;">Почему GrandsonSound?</h2>
+            <p style="color: var(--gray); margin-bottom: 30px;">Сравните с другими популярными сервисами</p>
+            
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Параметр</th>
+                            <th>GrandsonSound</th>
+                            <th>Яндекс.Музыка</th>
+                            <th>VK Музыка</th>
+                            <th>Apple Music</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Цена от</td>
+                            <td class="highlight"><span class="ours">149 ₽</span> (студ.)</td>
+                            <td>299 ₽</td>
+                            <td>159 ₽</td>
+                            <td>169 ₽</td>
+                        </tr>
+                        <tr>
+                            <td>Качество звука</td>
+                            <td class="highlight">320 kbps / Lossless</td>
+                            <td>320 kbps</td>
+                            <td>128 kbps</td>
+                            <td>Lossless / Hi-Res</td>
+                        </tr>
+                        <tr>
+                            <td>Социальные функции</td>
+                            <td class="highlight"><i class="fas fa-check"></i> Совместные сессии, чат</td>
+                            <td><i class="fas fa-times"></i> Ограничено</td>
+                            <td><i class="fas fa-check"></i> Интеграция с VK</td>
+                            <td><i class="fas fa-times"></i> Нет</td>
+                        </tr>
+                        <tr>
+                            <td>Офлайн-режим</td>
+                            <td class="highlight"><i class="fas fa-check"></i> Premium+</td>
+                            <td><i class="fas fa-check"></i> Да</td>
+                            <td><i class="fas fa-check"></i> Да</td>
+                            <td><i class="fas fa-check"></i> Да</td>
+                        </tr>
+                        <tr>
+                            <td>Студенческий тариф</td>
+                            <td class="highlight"><i class="fas fa-check"></i> 149 ₽</td>
+                            <td><i class="fas fa-times"></i> Нет</td>
+                            <td><i class="fas fa-check"></i> 89 ₽</td>
+                            <td><i class="fas fa-check"></i> 89 ₽</td>
+                        </tr>
+                        <tr>
+                            <td>Совместные плейлисты</td>
+                            <td class="highlight"><i class="fas fa-check"></i> В реальном времени</td>
+                            <td><i class="fas fa-check"></i> Есть</td>
+                            <td><i class="fas fa-check"></i> Есть</td>
+                            <td><i class="fas fa-check"></i> Есть</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="card" data-href="pages/player.html?track=all-my-life">
-                <div style="display: flex; gap: 16px;">
-                    <div class="cover" style="background: #10B981;">LD</div>
-                    <div>
-                        <h3>All My Life</h3>
-                        <p style="color: var(--gray);">Lil Durk</p>
-                    </div>
-                </div>
+            
+            <p style="color: var(--gray); margin-top: 20px; font-size: 14px; text-align: center;">
+                * Данные по состоянию на 2026 год. Apple Music требует иностранную карту.
+            </p>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="logo" style="font-size: 20px;">GrandsonSound</div>
+            <div class="footer-links">
+                <a href="#">О нас</a>
+                <a href="#">Правила</a>
+                <a href="#">Конфиденциальность</a>
+                <a href="#"><i class="fab fa-vk"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
             </div>
+            <div style="color: var(--gray); font-size: 14px;">© 2026 GrandsonSound</div>
         </div>
-    </section>
-<script src="navigation.js"></script>
+    </footer>
+
+    <script src="navigation.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
