@@ -22,73 +22,43 @@
         </div>
     </nav>
 
-    <section class="container" style="margin-top: 100px; text-align: center;">
+    <section class="container" style="margin-top: 100px;">
         <div style="max-width: 600px; margin: 0 auto;">
-            <div class="cover" style="width: 200px; height: 200px; margin: 0 auto 30px; font-size: 48px;" id="albumCover">KV</div>
+            <!-- Обложка -->
+            <div class="cover" style="width: 200px; height: 200px; margin: 0 auto 20px; font-size: 48px; display: flex; align-items: center; justify-content: center;" id="albumCover">KV</div>
             <h1 id="trackTitle">Crazy Story</h1>
             <h2 style="color: var(--gray);" id="artistName">King Von</h2>
-            
-            <div style="margin: 40px 0;">
-                <div class="progress" style="margin-bottom: 20px;">
-                    <div class="progress-fill" id="progressFill" style="width: 20%;"></div>
-                </div>
-                <div class="controls" style="justify-content: center;">
-                    <button id="prevBtn"><i class="fas fa-step-backward"></i></button>
-                    <button id="playPauseBtn" style="width: 64px; height: 64px; background: var(--primary); border-radius: 50%;"><i class="fas fa-play"></i></button>
-                    <button id="nextBtn"><i class="fas fa-step-forward"></i></button>
-                </div>
-            </div>
-            
-            <a href="pricing.html" class="btn btn-primary" style="margin-top: 20px;">Премиум — слушать без рекламы</a>
+
+            <!-- Аудиоплеер -->
+            <audio id="audioPlayer" controls style="width:100%; margin: 20px 0;"></audio>
+
+            <!-- Плейлист -->
+            <ul id="playlist">
+                <li data-src="https://www2.cs.uic.edu/~i101/SoundFiles/CantinaBand60.wav" data-title="Crazy Story" data-artist="King Von" data-cover="KV" data-color="#E53E3E">King Von – Crazy Story</li>
+                <li data-src="https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav" data-title="Took Her To The O" data-artist="King Von" data-cover="KV" data-color="#E53E3E">King Von – Took Her To The O</li>
+                <li data-src="https://www2.cs.uic.edu/~i101/SoundFiles/PinkPanther60.wav" data-title="Shotta Flow" data-artist="NLE Choppa" data-cover="NC" data-color="#2563EB">NLE Choppa – Shotta Flow</li>
+                <li data-src="https://www2.cs.uic.edu/~i101/SoundFiles/ImperialMarch60.wav" data-title="Love Sosa" data-artist="Chief Keef" data-cover="CS" data-color="#F59E0B">Chief Keef – Love Sosa</li>
+                <li data-src="https://www2.cs.uic.edu/~i101/SoundFiles/CantinaBand60.wav" data-title="All My Life" data-artist="Lil Durk" data-cover="LD" data-color="#10B981">Lil Durk – All My Life</li>
+            </ul>
         </div>
     </section>
 
-    <script>
-        const tracks = [
-            { title: "Crazy Story", artist: "King Von", cover: "KV", color: "#E53E3E" },
-            { title: "Took Her To The O", artist: "King Von", cover: "KV", color: "#E53E3E" },
-            { title: "Shotta Flow", artist: "NLE Choppa", cover: "NC", color: "#2563EB" },
-            { title: "Camelot", artist: "NLE Choppa", cover: "NC", color: "#2563EB" },
-            { title: "Love Sosa", artist: "Chief Keef", cover: "CS", color: "#F59E0B" },
-            { title: "Faneto", artist: "Chief Keef", cover: "CS", color: "#F59E0B" },
-            { title: "All My Life", artist: "Lil Durk", cover: "LD", color: "#10B981" },
-            { title: "Viral Moment", artist: "Lil Durk", cover: "LD", color: "#10B981" }
-        ];
-        
-        const params = new URLSearchParams(window.location.search);
-        let currentIndex = 0;
-        const trackParam = params.get('track');
-        if (trackParam) {
-            const index = tracks.findIndex(t => t.title.toLowerCase().replace(/\s/g,'-') === trackParam);
-            if (index !== -1) currentIndex = index;
-        }
-        
-        function loadTrack(index) {
-            const track = tracks[index];
-            document.getElementById('trackTitle').innerText = track.title;
-            document.getElementById('artistName').innerText = track.artist;
-            const coverEl = document.getElementById('albumCover');
-            coverEl.innerText = track.cover;
-            coverEl.style.background = track.color;
-        }
-        loadTrack(currentIndex);
-        
-        let isPlaying = false;
-        const playBtn = document.getElementById('playPauseBtn');
-        playBtn.addEventListener('click', () => {
-isPlaying = !isPlaying;
-            playBtn.innerHTML = isPlaying ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>';
-        });
-        
-        document.getElementById('prevBtn').addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + tracks.length) % tracks.length;
-            loadTrack(currentIndex);
-        });
-        document.getElementById('nextBtn').addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % tracks.length;
-            loadTrack(currentIndex);
-        });
-    </script>
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="logo" style="font-size: 20px;">GrandsonSound</div>
+            <div class="footer-links">
+                <a href="#">О нас</a>
+                <a href="#">Правила</a>
+                <a href="#">Конфиденциальность</a>
+                <a href="#"><i class="fab fa-vk"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+            </div>
+            <div style="color: var(--gray); font-size: 14px;">© 2026 GrandsonSound</div>
+        </div>
+    </footer>
+
     <script src="../navigation.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>
